@@ -1,11 +1,11 @@
 
 # SỐ HÓA TỦ SÁCH (DIGITALIZING BOOKSHELVES)
 
-Đề tài nghiên cứu phát triển hệ thống cho phép người dùng chụp bìa cuốn sách, và hệ thống sẽ tự động nhận dạng chữ trên đó, phân biệt đâu là tên sách và xuất ra tên sách tương ứng, hỗ trợ việc lập danh sách quản lí sách.
+Đề tài nghiên cứu, phát triển hệ thống với chức năng nhận diện các vùng văn bản trên ảnh bìa sách, phân loại đâu là tên sách và  xuất ra tên sách tương ứng.
 
 
-## Người thực hiện
-Nhóm sinh viên trường Đại học Công nghệ Thông tin:
+## Sinh viên thực hiện
+Nhóm sinh viên trường Đại học Công nghệ Thông tin Đại học Quốc gia-TP.HCM :
 - [Nguyễn Gia Bảo Ngọc – 21520366](https://github.com/ngbn111723)
 - [Nguyễn Quốc Trường An – 21521810](https://github.com/nqtan1810)
 - [Nguyễn Đức Tú – 21521612](https://github.com/Tund272)
@@ -31,7 +31,7 @@ Nhóm sinh viên trường Đại học Công nghệ Thông tin:
 
 
 ## Mở đầu
-Ngày nay với sự phát triển của công nghệ thông tin và trí tuệ nhân tạo AI, việc ứng dụng Machine Learning vào đời sống thực tế hàng ngày càng trở nên dễ dàng và hiệu quả. Xuất phát từ nhu cầu thực tế việc cần quản lí một lượng lớn số lượng sách mà không có danh sách quản lí ngay từ đầu, việc lập danh sách quản lí là việc thiết thực và cần thiết. Bởi số lượng lớn sách cần lập danh sách khiến cho việc nhập liệu thủ công trở nên tốn rất nhiều công sức và thời gian. Nhìn thấy được điều này, đề tài nghiên cứu của nhóm với mục tiêu là phát triển một mô hình máy học cho phép người dùng đưa vào ảnh là trang bìa một cuốn sách nhận dạng được và xuất ra tên của quyển sách đó, hỗ trợ việc lập danh sách quản lý sách.
+Ngày nay với sự phát triển của công nghệ thông tin và trí tuệ nhân tạo, việc ứng dụng Máy Học (Machine Learning) vào đời sống thực tế ngày càng trở nên phổ biến. Xuất phát từ thực tế là cá nhân hay tổ chức (thư viện, hiệu sách cũ,...) sở hữu số lượng sách lớn sẽ có nhu cầu lập danh sách quản lí sách thuộc sở hữu. Trong trường hợp lượng lớn sách cần lập danh sách, sẽ khiến cho việc nhập liệu thủ công trở nên mất nhiều công sức và thời gian. Nhìn thấy được điều này, đề tài nghiên cứu của nhóm với mục tiêu là phát triển một hệ thống bao gồm mô hình Máy học và các công cụ hỗ trợ khác, cho phép người dùng từ ảnh là trang bìa một cuốn sách nhận dạng được và xuất ra tên của quyển sách đó, hỗ trợ việc lập danh sách quản lý sách.
 
 ![Làm thế nào để lập một danh sách với hơn một triệu phần tử?](https://drive.google.com/uc?export=view&id=1pTW5GRaXK7S0HYJMJEtmDAJ4FQ52F7rS)
 
@@ -41,12 +41,12 @@ Ngày nay với sự phát triển của công nghệ thông tin và trí tuệ 
 
 Project được cài đặt bằng ngôn ngữ Python và chạy trên Google Colab.
 - Ngôn ngữ lập trình: Python
-- Phần mềm lập trình: Google Colab
+- Môi trường lập trình: Google Colab
 
 
 ## Tổng quan
 ### Mô tả bài toán
-Đề tài nhóm thực hiện với mục tiêu là phát triển hệ thống bao gồm mô hình máy học chuyên biệt kết hợp với công cụ hỗ trợ cho phép người dùng đưa vào ảnh là trang bìa một cuốn sách, mô hình sẽ nhận dạng được và xuất ra tên cuốn sách đó, hỗ trợ việc lập danh sách quản lí sách.
+Đề tài nhóm thực hiện với mục tiêu là phát triển hệ thống bao gồm mô hình MMáy học chuyên biệt kết hợp với công cụ hỗ trợ cho phép người dùng đưa vào ảnh là trang bìa một cuốn sách, mô hình sẽ nhận dạng được và xuất ra tên cuốn sách đó, hỗ trợ việc lập danh sách quản lí sách.
 
 #### Input
 - Input: Ảnh bìa quyển sách
@@ -58,31 +58,28 @@ Project được cài đặt bằng ngôn ngữ Python và chạy trên Google C
 Sản phẩm của đề tài có thể ứng dụng cho các tổ chức, cá nhân có nhu cầu lập danh sách quản lí sách, văn bản có bìa như sách,… Ví dụ thực tế: Các tiệm sách cũ, các quán cà phê sách, thư viện, tiệm sách cũ… có thể sở hữu hàng trăm thậm chí hàng nghìn tựa sách, có thể từ nhiều nguồn như mua lại, được cho tặng mà các trường hợp trên không có danh sách quản lí ngay từ ban đầu, việc đó thường gây khó khăn cho việc quản lí sách, bởi lẽ số lượng lớn sách dẫn đến việc nhập liệu thủ công tốn thời gian.
 
 #### Lý do sử dụng mô hình máy học
-Trên một bìa sách có thể bao gồm rất nhiều kí tự chữ viết, nhưng không phải tên sách, bao gồm: Tên nhà xuất bản, tên tác giả hoặc cụm từ chỉ để trang trí hay marketing như “Best Seller”, “New Edition”… chưa kể đến chất lượng ảnh, góc chụp ảnh. Vì những lí do trên đề tài cần áp dụng mô hình máy học kết hợp các công cụ hỗ trợ như OpenCV, Easy OCR và Pytesseract để hỗ trợ việc cắt ảnh, nhận diện vùng có chữ (Text Detection) và tách chữ (Text Extraction), kết hợp với model máy học Binary Classification của nhóm phát triển thì từ input là ảnh bìa sẽ đưa ra được output cuối cùng là tên sách ở dạng chữ.
-### Dataset
-- Các phần tử trong bộ dữ liệu bao gồm ảnh của bìa sách. 
-- Số lượng phần tử trong bộ dữ liệu bao gồm 5046 phần tử là các đặc trưng được rút trích từ 700 ảnh bìa sách tiếng Việt hoặc sách tiếng Anh.
-- Nguồn thu thập dữ liệu: từ cá nhân, các thư viện các trường học, các nguồn công khai khác... 
-- Các thao tác tiền xử lý (dự kiến): có thể chuyển sang định dạng trắng đen giúp giảm nhiễu là làm cho văn bản trên ảnh trở nên rõ ràng hơn.
+Trên một bìa sách có thể bao gồm rất nhiều vùng văn bản, nhưng không phải tên sách, ví dụ như: Tên nhà xuất bản, tên tác giả hoặc cụm từ chỉ để trang trí hay quảng bá như: “Best Seller”, “New Edition”,... mà không có bất kì chương trình lập trình truyền thống cụ thể nào có thể phân loại được đâu là tựa sách từ các vùng văn bản được nhận diện trên ảnh bìa sách. Vì những lí do trên, hệ thống mà nhóm phát triển cần áp dụng một mô hình Máy học cụ thể là mô hình Binary Classification với mục đích chính là phân loại vùng văn bản chứa tựa sách với các vùng văn bản khác được nhận diện trên ảnh bìa sách.
+### Tập dữ liệu
+- Tập dữ liệu bao gồm 5046 phần tử là các đặc trưng được rút trích từ 700 ảnh bìa sách tiếng Việt hoặc sách tiếng Anh.
+- Nguồn thu thập dữ liệu: từ cá nhân, Thư viện Đại học Công nghệ Thông tin ĐHQG-TP.HCM, Thư viện Trung tâm ĐHQG-TP.HCM, Thư viện Trung tâm ĐHQG-TP.HCM chi nhánh KTX khu B, các nguồn công khai khác... 
 - Số lượng phần tử trong tập train và test sẽ lần lượt theo tỉ lệ 75% và 25%.
-- Trong phạm vi đề tài sẽ chỉ tập trung vào sách, các loại văn bản gần giống sách (báo và tạp chí không được đưa vào do trang bìa của báo và tạp chí có thể bao gồm nhiều tiêu đề, hình ảnh yêu cầu kĩ thuật cao hơn).
 ![Một phần của dataset](https://drive.google.com/uc?export=view&id=1K8kFzMt7Rq_WLAiOv93EkhTNxAUdgXPI)
-### Pipeline và Model
-Đề tài thực hiện của nhóm bao gồm một hệ thống Pipeline gồm 3 mô hình máy học ứng với 3 giai đoạn xử lí của dữ liệu: Text Detection, Binary Classification, Text Extraction. Trong đó, Binary Classification là phần nhiệm vụ chính của nhóm cần thực hiện training model.
-- Giai đoạn thứ nhất (Text Detection): Ảnh bìa sách đưa vào được xử lí để nhận diện ra vùng chứa chữ và kí tự. Giai đoạn này được thực hiện bằng công cụ hỗ trợ Pytesseract để khoanh vùng chứ chữ và kí tự trên bìa sách.
-- Giai đoạn thứ hai (Binary Classification): Nhóm sẽ thực hiện training model nhận diện các vùng có chữ này, đâu là vùng chứa tên sách. Giai đoạn này sử dụng mô hình máy học Binary Classification để thực hiện. Đây là giai đoạn mà nhóm sẽ tiến hành tự training model và cài đặt trong hệ thống Pipeline.
-- Giai đoạn thứ ba (Text Extraction): Sau khi đã biết được vùng nào là vùng chứa tên sách, ở giai đoạn này sẽ sử dụng công cụ hỗ trợ là Easy OCR để tách chữ từ vùng nhận diện được trong ảnh thành văn bản.
+### CÁC GIAI ĐOẠN TRONG HỆ THỐNG
+Đề tài thực hiện của nhóm bao gồm một hệ thống Pipeline gồm 3 mô hình máy học ứng với 3 giai đoạn xử lí của dữ liệu: 
+- Giai đoạn thứ nhất (Text Detection): có chức năng nhận diện ra vùng văn bản (hay vùng ảnh có chứa văn bản). Giai đoạn này được thực hiện bằng cách áp dụng công Pytesseract hỗ trợ việc nhận diện vùng văn bản trên ảnh bìa sách.
+- Giai đoạn thứ hai (Classification): có chức năng phân loại vùng văn bản có chứa tên sách với các vùng văn bản khác được nhận diện từ ảnh bìa sách. Giai đoạn này được thực hiện bằng cách áp dụng mô hình máy học Binary Classification (đây là mô hình Máy học nhóm sẽ thu thập dữ liệu và huấn luyện).
+- Giai đoạn thứ ba (Text Extraction): có chức năng là xuất vùng văn bản có trong ảnh. Sau khi đã biết được vùng nào là vùng chứa tên sách. Giai đoạn này sẽ sử dụng công cụ hỗ trợ là Easy OCR để xuất văn bản từ vùng ảnh có chứa văn bản được phân loại là tựa sách.
 ![Kết quả output của Pipeline](https://drive.google.com/uc?export=view&id=1g-AZ2dUmEhxeAcvGsMh5t4x3-3qN_LGo)
 
 
 ## Chi tiết thực hiện
 Phần này sẽ đi sâu vào chi tiết những công đoạn mà nhóm đã nghiên cứu và thực hiện để cho ra kết quả cuối cùng, hình sau là Machine Learning Pipeline của nhóm:
 ![Machine Learning Pipeline](https://drive.google.com/uc?export=view&id=1f5EIJJpOaYcxq5MPhT5jsKaDmUSx_fIH)
-### Text Detection
-Đây là bước nhận diện khoanh vùng chữ trên bìa sách sử dụng công cụ Pytesseract.
+### Giai đoạn thứ nhất (Text Detection):
+Đây là bước nhận diện vùng văn bản có trên ảnh bìa sách, được hỗ trợ bởi công cụ Pytesseract.
 ![Khoang vùng văn bản](https://drive.google.com/uc?export=view&id=1GzStPu-1IpdEENrA4RzSkqtvSfVNcBVv)
-### Binary Classification
-Để có được mô hình Binary Classification tốt nhất, nhóm đã thực hiện huấn luyện 6 mô hình Binary Classification dựa trên 6 thuật toán khác nhau trên tập dữ liệu được có được để chọn ra mô hình tốt nhất cho hệ thống. Cụ thể 6 thuật toán được áp dụng là:
+### Giai đoạn thứ hai (Classification):
+Để có được mô hình Binary Classification tốt nhất cho giai đoạn này của hệ thống, nhóm đã thực hiện huấn luyện 6 mô hình Binary Classification dựa trên 6 thuật toán khác nhau trên tập dữ liệu có được để chọn ra mô hình tốt nhất cho hệ thống. Cụ thể 6 thuật toán được áp dụng là:
 - Logistic regression 
 - Support Vector Machine 
 - Decision Tree
@@ -90,19 +87,19 @@ Phần này sẽ đi sâu vào chi tiết những công đoạn mà nhóm đã n
 - Naïve Bayes
 - K-nearest Neighbor 
  
-Các mô hình Binary Classification này đều đã được tích hợp sẵn trong thư viện ‘sklearn’ nhóm sẽ tiến hành sử dụng như sử dụng các đối tượng bình thường khác. Sau các bước training, nhóm thực hiện chọn ra model có F1-Score cao nhất để thực hiện cài đặt vào hệ thống Pipeline.  
+Các mô hình Binary Classification này đều đã được tích hợp sẵn trong thư viện ‘sklearn’ nhóm sẽ tiến hành sử dụng như sử dụng các đối tượng bình thường khác. Sau các bước huấn luyện, nhóm thực hiện sẽ chọn ra mô hình có thông F1-Score cao nhất để thực hiện cài đặt vào hệ thống.  
 ![Thông số các mô hình Binary Classification](https://drive.google.com/uc?export=view&id=1j8IHCbA3nrW4Ql9k36Be4n-uY8zPzw5E)
 
 ### Text Extraction
-Sau khi đã biết được vùng nào là vùng chứa tên sách, ở giai đoạn này sẽ sử dụng công cụ hỗ trợ là Easy OCR để tách chữ từ vùng nhận diện được trong ảnh thành văn bản, cho ra kết quả cuối cùng.
+Sau khi đã biết được vùng văn  nào là vùng chứa tên sách, giai đoạn này sẽ sử dụng công cụ hỗ trợ là Easy OCR để xuất văn bản từ vùng văn bản được phân loại là tựa sách, cho ra kết quả cuối cùng.
 ![Text Extraction](https://drive.google.com/uc?export=view&id=1AK956UcxIrKf6zAlutw4_Lcm2v-5Rs2c)
 
 ## Đánh giá và tổng kết
 Thực hiện đánh giá với tập test đầu vào là 70 ảnh bìa sách, kết quả thu được như sau:
-- Kết quả đánh giá accuracy của Text Detection: 66%
-- Kết quả đánh giá accuracy của Binary Classification: 81%
-- Kết quả đánh giá accuracy của Text Extraction: 43.6%
-- Kết quả đánh giá Pipeline: 7.2%
+- Kết quả đánh giá hiệu suất của giai đoạn thứ nhất (Text Detection): 66%
+- Kết quả đánh giá hiệu suất của giai đoạn thứ hai (Classification): 81%
+- Kết quả đánh giá hiệu suất của giai đoạn thứ ba (Text Extraction): 43.6%
+- Kết quả đánh giá độ chính xác của toàn bộ hệ thống: 7.2%
 ## Tài liệu tham khảo
 - [Text Detection and Extraction using OpenCV and OCR](https://www.geeksforgeeks.org/text-detection-and-extraction-using-opencv-and-ocr/amp/?fbclid=IwAR158PXv1lY__2vw2dfHXbhorWqO-WnoYhJzgbU1vOckgnh-Hjjn5-jrz1Y)
 - [Binary Classification](https://www.learndatasci.com/glossary/binary-classification/?fbclid=IwAR3QBvsHXBle5sFrntfTgwZWrWAIWAWtOYSfJxBjZ42DCkPuQ_RSO5zADoY)
