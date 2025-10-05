@@ -46,7 +46,7 @@ Project được cài đặt bằng ngôn ngữ Python và chạy trên Google C
 
 ## Tổng quan
 ### Mô tả bài toán
-Đề tài nhóm thực hiện với mục tiêu là phát triển hệ thống bao gồm mô hình MMáy học chuyên biệt kết hợp với công cụ hỗ trợ cho phép người dùng đưa vào ảnh là trang bìa một cuốn sách, mô hình sẽ nhận dạng được và xuất ra tên cuốn sách đó, hỗ trợ việc lập danh sách quản lí sách.
+Đề tài nhóm thực hiện với mục tiêu là phát triển hệ thống bao gồm mô hình Máy học chuyên biệt kết hợp với công cụ hỗ trợ cho phép người dùng đưa vào ảnh là trang bìa một cuốn sách, mô hình sẽ nhận dạng được và xuất ra tên cuốn sách đó, hỗ trợ việc lập danh sách quản lí sách.
 
 #### Input
 - Input: Ảnh bìa quyển sách
